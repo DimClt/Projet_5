@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Consulter le contenue de votre panier à tous moment">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../backend/favicon.png" type="image/png">
+        <link rel="stylesheet" href="css/style.css" media="all">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin media="all">
+        <title>Votre panier</title>
+    </head>
+
+    <body>
+        <header>
+                <nav class="head-nav">
+                <a href="index.html"><img src="../backend/images/orinoco_nav.png" alt="Logo Orinoco" aria-label="Liste des produits"></a>
+                <ul class="head-nav-list">
+                    <li class="nav-list"><a href="index.html">Liste des produits</a></li>
+                    <li class="nav-list"><a href="panier.html">Votre panier</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main">
+            <h1 class="index-title">Vos produits en attente</h1>
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Apercus</th>
+                        <th>Produit</th>
+                        <th>Lentille</th>
+                        <th>Prix</th>
+                        <th id="quantite">Quantité</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr id="tableCommande">
+                        <!-- <td>  </td>
+                        <td>  </td> -->
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" id="tableTotal">Total de votre commande</td>
+                        <!-- <td>   </td> -->
+                    </tr>
+                </tfoot>
+            </table>
+            <form action="" method="POST">
+                <label for="firstName">(*) Prénom</label>
+                <input type="text" name="firstName" required>
+                <label for="lastName">(*) Nom</label>
+                <input type="text" name="lastName" required>
+                <label for="adresse">(*) Votre adresse</label>
+                <input type="text" name="adresse" required>
+                <label for="email">(*) Votre adresse email</label>
+                <input type="email" name="email" required>
+
+                <input type="button" value="Valider la commande">
+            </form>
+        </main>
+        <footer class="footer-social">
+            <div>
+                <div>
+                    <a href="#" aria-label="Twiter"><span class="fa fa-twitter ic icon-md"></span></a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <a href="#" aria-label="Facebook"><span class="fa fa-facebook ic icon-md"></span></a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <a href="#" aria-label="Dribble"><span class="fa fa-dribbble ic icon-md"></span></a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <a href="#" aria-label="Instagram"><span class="fa fa-instagram ic icon-md"></span></a>
+                </div>
+            </div>
+        </footer>
+        <script src="js/panier.js"></script>
+    </body>
+</html>
