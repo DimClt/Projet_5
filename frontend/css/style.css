@@ -1,7 +1,7 @@
 /* background logo color : #F3E9F1 */
 
-
 /*************** CSS du HTML (header, footer, main) ****************/
+
 .head-nav {
     display: flex;
     position: absolute;
@@ -27,6 +27,9 @@
     text-decoration: none;
     color: #000000;
 }
+.nav-list-hr{
+    display: none;
+}
 .nav-list:last-child {
     padding-right: 25px;
 }
@@ -41,12 +44,24 @@
 .footer-social {
     display: flex;
     background-color: #F3E9F1;
-    font-size: 2.5rem;
+    font-size: 2rem;
     justify-content: space-around;
     padding: 1rem 0;
 }
 .ic {
     color: #000000;
+}
+
+/*************************** Bouton CSS général ********************/
+
+button {    
+    border-radius: 15px;
+    padding: .25rem .5rem;
+    transition: all .3s ease-in-out;
+}
+button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px grey;
 }
 
 /************************** CSS h1 index ***************************/
@@ -55,16 +70,20 @@
     text-align: center;
     margin-bottom: 2rem;
 }
+ /************************* h1 général *****************************/
 
-/************* CSS du JS (article + contenus du main) **************/
-
-
+ h1 {
+    font-size: 2rem;
+    font-style: italic;
+    text-decoration: underline;
+ }
 /************************ Page d'acceuil ***************************/
+
 .index-article {
     position: relative;
     width: 60%;
     margin: 1rem auto;
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.75rem;
     background-color: #F3E9F1;
     border-radius: 15px;
 }
@@ -87,7 +106,7 @@ img.index-img {
 .index-description {
     text-align: center;
     font-size: 1.1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 .index-price {
     position: absolute;
@@ -98,6 +117,7 @@ img.index-img {
 }
 
 /**************************** Page produit *************************/
+
 .produit-article {
     position: relative;
     width: 80%;
@@ -114,12 +134,15 @@ img.produit-img {
     padding-top: 2rem;
     margin-bottom: 1rem;
 }
+.produit-description {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
 #submit-form {
     position: absolute;
     right: 9rem;
     bottom: 1rem;
-    border-radius: 15px;
-    padding: .5rem 1rem;
 }
 #lense {
     position: absolute;
@@ -127,22 +150,206 @@ img.produit-img {
     bottom: 1.25rem;
     border-radius: 5px;  
 }
+#lense:hover {
+    cursor: pointer;
+}
 
 /**************************** Page panier ***************************/
 
-#table {
-    width: 80%;
-    margin: auto;
-    margin-bottom: 5rem;
+.article {
+    display: flex;
+    height: 200px;
+    width: 100%;
+    background-color: #F3E9F1;
+    border-radius: 15px;
+    margin-bottom: .25rem;
 }
-th, td{
-    width: 25%;
+.divMiddle, .divLast {
+    flex: auto;
+}
+.divImg, .divMiddle, .divLast {
+    justify-content: space-between;
+}
+.apercu-panier{
+    width: auto;
+    height: 200px;
+    border-radius: 15px 0 0 15Px;
+}
+.divMiddle {
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.divMiddle .divAdd {
+    display: flex;
+}
+.divAdd p {
+    margin: 0;
+    align-self: center;
+}
+.divMiddle .addButton {
+    margin-left: 1rem;
+    padding: .15rem .25rem;
+}
+.divLast {
+    padding-right: 1rem;
+    text-align: right;
+    align-self: center;
+}
+.divLast p {
+    margin-top: 5rem;
+}
+.divTotal {
     text-align: center;
+    font-size: 1.25rem;
 }
-#tableTotal {
-    text-align: end;
+#form-contact {
+    width: 50%;
+    margin: auto;
+    padding: 1rem 0;
+    background-color: #F3E9F1;
+    border-radius: 15px;
 }
-.apercu-panier {
-    width: 200px;
-    height: auto;
+#formFirstPart {
+    margin-bottom: 1rem;
+}
+.formFirstPart, .formSecondPart {
+    display: flex;
+    justify-content: space-around;
+}
+.formSecondPart label, .formSecondPart input {
+    align-self: center;
+} 
+#submit-commande {
+    margin-left: 2rem;
+}
+
+/************************ page de ocnfirmation *************************/
+
+.h2-confirm {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 3rem 0;
+}
+
+/************************ Media querry header **************************/
+@media only screen and (max-width : 1350px) {
+    #form-contact {
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 870px){
+    #lense {
+        left: 5rem; 
+    }
+    #submit-form {
+        right: 5rem;
+    }
+        /************************ Responcive panier ***********************/
+    .article {
+        height: auto;
+        width: 100%;
+        background-color: #F3E9F1;
+        border-radius: 15px;
+        margin-bottom: .25rem;
+    }
+    .divImg {
+        width: 35%;
+        display: flex;
+        align-items: center;
+    }
+    .apercu-panier{
+        width: 100%;
+        height: auto;
+        border-radius: 0 0 0 0;
+    }
+    .divMiddle {
+        padding-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    
+    }
+    .divLast {
+        padding-top: 1rem;
+    }
+    .divMiddle h2, .divMiddle p {
+        margin: 0;
+    }
+    .totalObject {
+        border-top: 5px solid #fff;
+        border-left: 5px solid #fff;
+        padding: .5rem 0 0 .5rem;
+    }
+    /********************** Formulaire panier *************************/
+    #formFirstPart {
+        margin-bottom: 0;
+    }
+    #form-contact label {
+        margin-bottom: .25rem;
+    }
+    #form-contact input {
+        margin-bottom: .75rem;
+    }
+    .formFirstPart, .formSecondPart {
+        display: flex;
+        flex-direction: column;
+    }
+    .formSecondPart label, .formSecondPart input, .formFirstPart label, .formFirstPart input {
+        align-self: center;
+    } 
+    #submit-command {
+        width: 60%;
+        margin: auto;
+    }
+}
+@media only screen and (max-width: 450px){
+    .head-nav-list {
+        padding-left: 0;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+    .nav-list {
+        margin-left: 0;
+        font-size: 1.3rem;
+    }
+    .nav-list li {
+        width: 50%;
+        
+    }
+    .head-nav-list li:last-child() {
+        padding-right: 0;
+    }
+    .nav-list-hr{
+        display: block;
+        height: 15px;
+        margin-right: .75rem;
+    }
+    .index-a {
+        top: -7%;
+    }
+    .index-produit {
+        margin-top: -.25rem;
+    }
+    #lense {
+        left: 2.25rem;
+        bottom: 4rem;
+    }
+    .index-description{
+        margin-bottom: 2rem;
+    }
+    #submit-form {
+        right: 5rem;
+        bottom: 1rem;
+    }
+    .index-price {
+        top: 1.75rem;
+    }
+    .produit-description {
+        margin-bottom: 5rem;
+    }
 }
