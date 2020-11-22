@@ -3,7 +3,7 @@ let url = "http://localhost:3000/api/cameras";
 
 let orderId = localStorage.getItem('orderId');
 
-let lTotalPrice = localStorage.getItem('totalprice');
+let lTotalPrice = localStorage.getItem('totalOrder');
 let totalPrice = JSON.parse(lTotalPrice);
 
 let lContact = localStorage.getItem('contact');

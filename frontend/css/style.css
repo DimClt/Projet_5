@@ -16,6 +16,7 @@
 }
 .head-nav-list {
     display: flex;
+    margin: .5rem 0;
 }
 .nav-list {
     margin-left: 1.5rem;
@@ -26,9 +27,6 @@
 .nav-list a {
     text-decoration: none;
     color: #000000;
-}
-.nav-list-hr{
-    display: none;
 }
 .nav-list:last-child {
     padding-right: 25px;
@@ -73,157 +71,141 @@ button:hover {
  /************************* h1 général *****************************/
 
  h1 {
-    font-size: 2rem;
     font-style: italic;
     text-decoration: underline;
  }
 /************************ Page d'acceuil ***************************/
 
+.index-article, .articleLink {
+    width: 70%;
+    margin: auto;
+    color: #000000;
+}
 .index-article {
-    position: relative;
-    width: 60%;
-    margin: 1rem auto;
+    margin-bottom: .5rem;
     padding: 1rem 1.75rem;
     background-color: #F3E9F1;
     border-radius: 15px;
 }
-.index-a {
-    position: relative;
-    display: flex;
-    text-decoration: none;
-    color: #000;
-    font-size: 1.5rem;
-    left: 10%;
-}
-img.index-img {
-    width: 60%;
+.index-img {
+    width: 30%;
     height: auto;
-    vertical-align: text-top;
-    padding-left: 20%; 
-    padding-top: 2rem;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 35%;
+}
+.articleLink, .articleLink:hover {
+    text-decoration: none;
+    color: #000000;
+}
+.index-price {
+    text-align: right;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.1rem;
 }
 .index-description {
     text-align: center;
     font-size: 1.1rem;
-    margin-bottom: 1rem;
-}
-.index-price {
-    position: absolute;
-    top: 1rem;
-    right: 2rem;
-    font-size: 1.1rem;
-    text-decoration: underline;
 }
 
 /**************************** Page produit *************************/
 
 .produit-article {
-    position: relative;
     width: 80%;
     margin: 1rem auto;
-    padding: 1.5rem 1.5rem;
+    padding: 1rem 1.75rem;
     background-color: #F3E9F1;
     border-radius: 15px;
 }
-img.produit-img {
-    width: 80%;
-    height: auto;
-    vertical-align: text-top;
-    padding-left: 10%; 
-    padding-top: 2rem;
+.index-produit {
     margin-bottom: 1rem;
+}
+.produit-img {
+    width: 60%;
+    height: auto;
+    margin: 0 0 1rem 20%;
 }
 .produit-description {
     text-align: center;
     font-size: 1.1rem;
-    margin-bottom: 3rem;
 }
-#submit-form {
-    position: absolute;
-    right: 9rem;
-    bottom: 1rem;
+.produit-price {
+    font-size: 1.1rem;
+    text-decoration: underline; 
+    font-weight: bold;
+    text-align: right;
+    padding-right: 18%;
+}
+#lense-form {
+    display: flex;
+    justify-content: space-around;
 }
 #lense {
-    position: absolute;
-    left: 9rem;
-    bottom: 1.25rem;
-    border-radius: 5px;  
-}
-#lense:hover {
-    cursor: pointer;
+    border-radius: 5px;
 }
 
 /**************************** Page panier ***************************/
 
-.article {
-    display: flex;
-    height: 200px;
-    width: 100%;
-    background-color: #F3E9F1;
-    border-radius: 15px;
-    margin-bottom: .25rem;
+.display {
+    display: none;
 }
-.divMiddle, .divLast {
-    flex: auto;
-}
-.divImg, .divMiddle, .divLast {
-    justify-content: space-between;
+.row {
+    border-bottom: 1px solid #000;
+    margin-bottom: .5rem;
+    padding-bottom: .25rem;
 }
 .apercu-panier{
     width: auto;
-    height: 200px;
-    border-radius: 15px 0 0 15Px;
+    height: 110px;
 }
-.divMiddle {
-    padding-left: 1rem;
+.divItemInfo {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-
+    height: 110px;
+    justify-content: space-between;
 }
-.divMiddle .divAdd {
+.divItemInfo p {
+    margin-bottom: .5rem;
+}
+.divChoice {
     display: flex;
+    justify-content: space-between;
 }
-.divAdd p {
-    margin: 0;
+.divChoice p {
     align-self: center;
+    margin-bottom: 0;
 }
-.divMiddle .addButton {
-    margin-left: 1rem;
-    padding: .15rem .25rem;
+.divButton {
+    display: flex;
+    flex-direction: column;
 }
-.divLast {
-    padding-right: 1rem;
-    text-align: right;
-    align-self: center;
+.divButton button:first-child {
+    margin-bottom: .5rem;
 }
-.divLast p {
-    margin-top: 5rem;
+.itemsPrices {
+    margin-bottom: 0;
 }
-.divTotal {
-    text-align: center;
-    font-size: 1.25rem;
+.totalOrder {
+    width: 32.5%;
+    margin: 1rem 0 1rem 68.5%;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 #form-contact {
-    width: 50%;
+    width: 80%;
     margin: auto;
-    padding: 1rem 0;
+    padding: 1rem 2.75rem;
     background-color: #F3E9F1;
     border-radius: 15px;
+    text-align: center;
 }
-#formFirstPart {
-    margin-bottom: 1rem;
+.formSecondPart label:first-child {
+    margin-right: 3%;
 }
-.formFirstPart, .formSecondPart {
-    display: flex;
-    justify-content: space-around;
+#form-contact input {
+    margin-right: .5rem;
 }
-.formSecondPart label, .formSecondPart input {
-    align-self: center;
-} 
-#submit-commande {
-    margin-left: 2rem;
+.formSecondPart #email {
+    margin-right: 10%;
 }
 
 /************************ page de ocnfirmation *************************/
@@ -234,56 +216,25 @@ img.produit-img {
     margin: 3rem 0;
 }
 
-/************************ Media querry header **************************/
-@media only screen and (max-width : 1350px) {
+/************************ Media querry **************************/
+/******************* Ordre taille décroissant *******************/
+/****** Ordre page : Index, produit, panier, confirmation ******/
+
+@media only screen and (max-width : 1200px) {
+    /********** Panier ************/
+    #divImg {
+        padding-left: 0;
+    }
     #form-contact {
-        width: 80%;
-    }
+        width: 100%;
+    } 
 }
-@media only screen and (max-width: 870px){
-    #lense {
-        left: 5rem; 
+
+@media only screen and (max-width : 992px) {
+    /********** Panier ************/
+    #divImg, .apercu-panier {
+        display: none;
     }
-    #submit-form {
-        right: 5rem;
-    }
-        /************************ Responcive panier ***********************/
-    .article {
-        height: auto;
-        width: 100%;
-        background-color: #F3E9F1;
-        border-radius: 15px;
-        margin-bottom: .25rem;
-    }
-    .divImg {
-        width: 35%;
-        display: flex;
-        align-items: center;
-    }
-    .apercu-panier{
-        width: 100%;
-        height: auto;
-        border-radius: 0 0 0 0;
-    }
-    .divMiddle {
-        padding-left: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    
-    }
-    .divLast {
-        padding-top: 1rem;
-    }
-    .divMiddle h2, .divMiddle p {
-        margin: 0;
-    }
-    .totalObject {
-        border-top: 5px solid #fff;
-        border-left: 5px solid #fff;
-        padding: .5rem 0 0 .5rem;
-    }
-    /********************** Formulaire panier *************************/
     #formFirstPart {
         margin-bottom: 0;
     }
@@ -300,17 +251,44 @@ img.produit-img {
     .formSecondPart label, .formSecondPart input, .formFirstPart label, .formFirstPart input {
         align-self: center;
     } 
+    .formSecondPart #email {
+        margin-right: 0;
+    }
     #submit-command {
-        width: 60%;
         margin: auto;
     }
 }
-@media only screen and (max-width: 450px){
+
+@media only screen and (max-width: 768px){
+    /********** Produit ***********/
+    #lense-form {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    #submit-form {
+        margin-top: 1rem;
+    }
+    /********** Panier ************/
+    #divImg {
+        padding: 5% 15px;
+    }
+    .apercu-panier{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    /*********** Header **********/
+    .head-nav a img {
+        display: none;
+    }
     .head-nav-list {
         padding-left: 0;
         width: 90%;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 5%;
+        margin-right: 5%;
         justify-content: center;
     }
     .nav-list {
@@ -321,35 +299,50 @@ img.produit-img {
         width: 50%;
         
     }
-    .head-nav-list li:last-child() {
+    .nav-list:last-child {
         padding-right: 0;
     }
     .nav-list-hr{
         display: block;
-        height: 15px;
-        margin-right: .75rem;
+        height: 35px;
+        width: 2px;
+        background-color: #000;
+        margin-top: 0;
+        margin-bottom: 0;
     }
-    .index-a {
-        top: -7%;
+    /****** Pour toute les pages ******/
+    #main {
+        position: static;
+        width: 100%;
     }
-    .index-produit {
-        margin-top: -.25rem;
+    /************ Index ***********/
+    .index-img {
+        width: 40%;
+        margin: 0 0 1rem 30%;
     }
+    /********** Produit ***********/
     #lense {
-        left: 2.25rem;
-        bottom: 4rem;
+        width: 100%;
     }
-    .index-description{
-        margin-bottom: 2rem;
+    /********** Panier ************/
+    .divItemInfo {
+        height: 173px;
     }
-    #submit-form {
-        right: 5rem;
-        bottom: 1rem;
+    .divChoice {
+        display: block;
     }
-    .index-price {
-        top: 1.75rem;
+    .divChoice p {
+        align-self: auto;
+        margin-bottom: 0;
     }
-    .produit-description {
-        margin-bottom: 5rem;
+    .divButton {
+        display: block;
+        border-bottom: 1px solid #000;
+        margin-bottom: .5rem;
+        padding-bottom: .5rem;
+    }
+    .divButton button:first-child {
+        margin-bottom: 0;
     }
 }
+
