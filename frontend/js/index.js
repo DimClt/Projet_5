@@ -37,11 +37,9 @@ function setItem (element) {
     name.classList = "index-a";
     name.innerHTML = element.name;
       
-    // let aImg = document.createElement("a");
-    // aImg.href = "produit.html?id="+element._id; // Exportation de l'idée pour afficher seulement le produit choisis
-  
     let img = document.createElement("img");
     img.classList = "index-img";
+    img.setAttribute("alt", "Image d'appareil photo");
     img.innerHTML = element.imageUrl;
     img.src=element.imageUrl;
   
@@ -57,11 +55,10 @@ function setItem (element) {
     article.classList = "index-article";
   
     
-    article.appendChild(name);
-    // article.appendChild(aImg);
-    article.appendChild(img);
-    article.appendChild(p);
-    article.appendChild(price);
-    a.appendChild(article);
-    main.appendChild(a);
+    a.appendChild(name);
+    a.appendChild(img);
+    a.appendChild(p);
+    a.appendChild(price);
+    article.appendChild(a);
+    main.appendChild(article);
 }

@@ -85,7 +85,8 @@ function setItem(element, id, lnse, container, addButton, delButton) { // Foncti
     let img = document.createElement('img'); // Création du html avec les données
     img.src = element.img;
     img.innerHTML = element.img;
-    img.classList = "apercu-panier";
+	img.classList = "apercu-panier";
+	img.setAttribute("alt", "Image d'appareil photo");
 
     let name = document.createElement('h2');
     name.innerHTML = element.name + " '" + element.lenses + "'"; 
@@ -159,12 +160,14 @@ panier.forEach(element => {
     let addButton = document.createElement("button");
 
     let addImg = document.createElement("img");
-    addImg.src = "../backend/images/add.png";
+	addImg.src = "../backend/images/add.png";
+	addImg.setAttribute("alt", "Ajouter un produit")
 
     let delButton = document.createElement("button");
 
     let delImg = document.createElement("img");
-    delImg.src = "../backend/images/del.png";
+	delImg.src = "../backend/images/del.png";
+	delImg.setAttribute("alt", "Retirer un produit")
 
     addButton.appendChild(addImg);
     delButton.appendChild(delImg);

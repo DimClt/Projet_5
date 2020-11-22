@@ -68,6 +68,7 @@ function displayCart(element_id, ajoutPanier){
         img.innerHTML=element_id.imageUrl;
         img.src=element_id.imageUrl;
         img.classList = "produit-img";
+        img.setAttribute("alt", "Image d'appareil photo");
 
         let p=document.createElement("p");
         p.innerHTML=element_id.description;

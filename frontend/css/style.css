@@ -1,8 +1,24 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* background logo color : #F3E9F1 */
 
 /*************** CSS du HTML (header, footer, main) ****************/
 
 .head-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: absolute;
     top: 0;
@@ -11,10 +27,14 @@
     margin-bottom: 2rem;
     background-color: #F3E9F1;
     width: 100%;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     z-index: 1;
 }
 .head-nav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: .5rem 0;
 }
@@ -22,11 +42,25 @@
     margin-left: 1.5rem;
     list-style-type: none;
     font-size: 1.5rem;
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
 }
 .nav-list a {
     text-decoration: none;
     color: #000000;
+    border: 2px solid #000;
+    padding: .25rem;
+}
+.head-nav a, .head-nav img {
+    border-radius: 15px;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+.head-nav a:hover {
+    -webkit-box-shadow: 0px 0px 10px #000;
+            box-shadow: 0px 0px 10px #000;
 }
 .nav-list:last-child {
     padding-right: 25px;
@@ -40,10 +74,13 @@
     margin-bottom: 7rem;
 }
 .footer-social {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background-color: #F3E9F1;
     font-size: 2rem;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     padding: 1rem 0;
 }
 .ic {
@@ -55,11 +92,14 @@
 button {    
     border-radius: 15px;
     padding: .25rem .5rem;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
 button:hover {
     cursor: pointer;
-    box-shadow: 0 0 10px grey;
+    -webkit-box-shadow: 0 0 10px grey;
+            box-shadow: 0 0 10px grey;
 }
 
 /************************** CSS h1 index ***************************/
@@ -76,16 +116,20 @@ button:hover {
  }
 /************************ Page d'acceuil ***************************/
 
-.index-article, .articleLink {
-    width: 70%;
-    margin: auto;
-    color: #000000;
-}
 .index-article {
-    margin-bottom: .5rem;
+    margin: 0 auto .5rem auto;
     padding: 1rem 1.75rem;
     background-color: #F3E9F1;
     border-radius: 15px;
+    width: 70%;
+    color: #000000;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+.index-article:hover {
+    -webkit-box-shadow: 0 0 10px #000;
+            box-shadow: 0 0 10px #000;
 }
 .index-img {
     width: 30%;
@@ -136,8 +180,11 @@ button:hover {
     padding-right: 18%;
 }
 #lense-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
 #lense {
     border-radius: 5px;
@@ -158,25 +205,43 @@ button:hover {
     height: 110px;
 }
 .divItemInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: 110px;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 .divItemInfo p {
     margin-bottom: .5rem;
 }
 .divChoice {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 .divChoice p {
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     margin-bottom: 0;
 }
 .divButton {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 .divButton button:first-child {
     margin-bottom: .5rem;
@@ -245,11 +310,18 @@ button:hover {
         margin-bottom: .75rem;
     }
     .formFirstPart, .formSecondPart {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
     .formSecondPart label, .formSecondPart input, .formFirstPart label, .formFirstPart input {
-        align-self: center;
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
     } 
     .formSecondPart #email {
         margin-right: 0;
@@ -260,6 +332,18 @@ button:hover {
 }
 
 @media only screen and (max-width: 768px){
+    /*********** Header **********/
+    .head-nav a img {
+        display: none;
+    }
+    .head-nav-list {
+        padding-left: 0;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    }
     /********** Produit ***********/
     #lense-form {
         display: block;
@@ -280,17 +364,6 @@ button:hover {
 }
 
 @media only screen and (max-width: 576px){
-    /*********** Header **********/
-    .head-nav a img {
-        display: none;
-    }
-    .head-nav-list {
-        padding-left: 0;
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        justify-content: center;
-    }
     .nav-list {
         margin-left: 0;
         font-size: 1.3rem;
@@ -301,14 +374,6 @@ button:hover {
     }
     .nav-list:last-child {
         padding-right: 0;
-    }
-    .nav-list-hr{
-        display: block;
-        height: 35px;
-        width: 2px;
-        background-color: #000;
-        margin-top: 0;
-        margin-bottom: 0;
     }
     /****** Pour toute les pages ******/
     #main {
@@ -332,7 +397,9 @@ button:hover {
         display: block;
     }
     .divChoice p {
-        align-self: auto;
+        -ms-flex-item-align: auto;
+            -ms-grid-row-align: auto;
+            align-self: auto;
         margin-bottom: 0;
     }
     .divButton {
