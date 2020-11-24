@@ -52,6 +52,13 @@ function changeHtml(qty, itemsPrices, totalOrder, element, id, lnse) { // Foncti
     return;
 }
 
+function formDisplay(panier) { // Fonction qui retire le formulaire si panier vide
+    let panierLength = Number(panier.length);
+    if (panierLength === 0) {
+        formContact.classList = "display";
+    }
+}
+
 function pushProduct(panier) { // Fonction qui prépare les données pour l'api
     panier.forEach(element => {
         let id = element.id;
@@ -117,6 +124,7 @@ function setItem(element, id, lnse, container, addButton, delButton) { // Foncti
             panierRemove (panier, element);
             changeHtml(qty, itemsPrices, totalOrder, element, id, lnse);
             divRow.classList = "display";
+            formDisplay(panier);
             isDelete = true;
         } 
         if (!isDelete && element.qty >= 1) {
@@ -181,6 +189,7 @@ container.appendChild(totalOrder);
 ////////////////////// Formulaire /////////////////////////
 
 let formContact = document.getElementById('form-contact'); 
+formDisplay(panier);
 let firstName = document.getElementById('firstName');
 let lastName = document.getElementById('lastName');
 let address = document.getElementById('address');
