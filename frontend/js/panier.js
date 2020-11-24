@@ -71,8 +71,7 @@ function setItem(element, id, lnse, container, addButton, delButton) { // Foncti
     divRow.classList = "row";
 
     let divImg = document.createElement('div'); 
-    divImg.classList = "col col-2";
-    divImg.id = "divImg";
+    divImg.classList = "col col-2 divImg";
 
     let divMain = document.createElement('div'); 
     divMain.classList = "col col-8 col-md-8 col-lg-6";

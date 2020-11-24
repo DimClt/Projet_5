@@ -354,7 +354,7 @@ button:hover {
         margin-top: 1rem;
     }
     /********** Panier ************/
-    #divImg {
+    .divImg {
         padding: 5% 15px;
     }
     .apercu-panier{
