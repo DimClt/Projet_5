@@ -1,5 +1,5 @@
 let url = "http://localhost:3000/api/cameras";
-//console.log(url);
+console.log(url);
 let main = document.getElementById("main");
 
 fetch(url) // Méthod qui permet de faire des "promise"
