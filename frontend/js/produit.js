@@ -82,22 +82,23 @@ function displayCart(element_id, ajoutPanier){
                 option.innerHTML=data;
                 lense.appendChild(option);
         })
+
         let price=document.createElement("p");
-                price.innerHTML=element_id.price + " €";
-                price.classList = "produit-price";
+        price.innerHTML= element_id.price/1000 + " €";
+        price.classList = "produit-price";
 
-                let article=document.createElement("article");
-                article.classList = "produit-article";
+        let article=document.createElement("article");
+        article.classList = "produit-article";
 
-                article.appendChild(title);
-                article.appendChild(img);
-                article.appendChild(p);
-                article.appendChild(price);
-                form.appendChild(lense);
-                form.appendChild(ajoutPanier);
-                article.appendChild(form);
+        article.appendChild(title);
+        article.appendChild(img);
+        article.appendChild(p);
+        article.appendChild(price);
+        form.appendChild(lense);
+        form.appendChild(ajoutPanier);
+        article.appendChild(form);
 
-                main.appendChild(article);
+        main.appendChild(article);
 
 
 }

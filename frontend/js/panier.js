@@ -20,7 +20,7 @@ function totalByProduct(panier, id, lnse,) { // Fonction de calcule du total par
     let totalItem;
     panier.forEach(element => {
         if (element.id == id && element.lenses == lnse ) {
-            totalItem = Number(element.qty * element.price);
+            totalItem = Number(element.qty * element.price/1000);
         }
     });
     return totalItem;
@@ -33,7 +33,7 @@ function totalForOrder(panier) { // Fonction qui calcule le total de la commande
     if (panier.length >= 1) {
         let allProductPrice = [];
         panier.forEach(element => {
-        allProductPrice.push(element.qty * element.price);
+        allProductPrice.push(element.qty * element.price/1000);
         });
         return Number(allProductPrice.reduce(reducer), 0);
     }
@@ -101,7 +101,7 @@ function setItem(element, id, lnse, container, addButton, delButton) { // Foncti
 
     let price = document.createElement('p');
     price.classList = "price";
-    price.innerHTML = "Prix : " + element.price + " €";
+    price.innerHTML = "Prix : " + element.price/1000 + " €";
 
     let itemsPrices = document.createElement('p');
     itemsPrices.classList = "itemsPrices";

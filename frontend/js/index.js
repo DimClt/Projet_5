@@ -1,5 +1,4 @@
 let url = "http://localhost:3000/api/cameras";
-console.log(url);
 let main = document.getElementById("main");
 
 fetch(url) // Méthod qui permet de faire des "promise"
@@ -29,9 +28,11 @@ fetch(url) // Méthod qui permet de faire des "promise"
   });
 
 function setItem (element) {
+    let id = element._id;
+
     let a = document.createElement('a');
     a.classList = "articleLink";
-    a.href = "produit.html?id="+element._id;
+    a.href = "produit.html?id="+id;
 
     let name = document.createElement("h2");
     name.classList = "index-a";
@@ -48,7 +49,7 @@ function setItem (element) {
     p.innerHTML = element.description;
   
     let price = document.createElement("p");
-    price.innerHTML = element.price + " €";
+    price.innerHTML = element.price/1000 + " €";
     price.classList = "index-price";
   
     let article = document.createElement('article');
@@ -62,3 +63,4 @@ function setItem (element) {
     article.appendChild(a);
     main.appendChild(article);
 }
+
