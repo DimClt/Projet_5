@@ -84,7 +84,7 @@ function displayCart(element_id, ajoutPanier){
         })
 
         let price=document.createElement("p");
-        price.innerHTML= element_id.price/1000 + " €";
+        price.innerHTML= element_id.price/100 + " €";
         price.classList = "produit-price";
 
         let article=document.createElement("article");

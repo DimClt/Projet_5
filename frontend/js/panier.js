@@ -6,6 +6,7 @@ let url = new URL("http://localhost:3000/api/cameras/order");
 // Panier recupère tous les produits choisis
 let lpanier = localStorage.getItem('panier');
 let panier = JSON.parse(lpanier);
+let isPresent = false;
 
 // Tableaux qui sera envoyé à l'api avec les id des objets validés
 let products = [];
@@ -20,7 +21,7 @@ function totalByProduct(panier, id, lnse,) { // Fonction de calcule du total par
     let totalItem;
     panier.forEach(element => {
         if (element.id == id && element.lenses == lnse ) {
-            totalItem = Number(element.qty * element.price/1000);
+            totalItem = Number(element.qty * element.price/100);
         }
     });
     return totalItem;
@@ -33,7 +34,7 @@ function totalForOrder(panier) { // Fonction qui calcule le total de la commande
     if (panier.length >= 1) {
         let allProductPrice = [];
         panier.forEach(element => {
-        allProductPrice.push(element.qty * element.price/1000);
+        allProductPrice.push(element.qty * element.price/100);
         });
         return Number(allProductPrice.reduce(reducer), 0);
     }
@@ -56,6 +57,7 @@ function formDisplay(panier) { // Fonction qui retire le formulaire si panier vi
     let panierLength = Number(panier.length);
     if (panierLength === 0) {
         formContact.classList = "display";
+        totalOrder.classList = "display";
     }
 }
 
@@ -101,7 +103,7 @@ function setItem(element, id, lnse, container, addButton, delButton) { // Foncti
 
     let price = document.createElement('p');
     price.classList = "price";
-    price.innerHTML = "Prix : " + element.price/1000 + " €";
+    price.innerHTML = "Prix : " + element.price/100 + " €";
 
     let itemsPrices = document.createElement('p');
     itemsPrices.classList = "itemsPrices";
@@ -159,35 +161,41 @@ function setItem(element, id, lnse, container, addButton, delButton) { // Foncti
 let totalOrder = document.createElement('p'); // Création html pour le total de la commande
 totalOrder.classList = "totalOrder";
 
-panier.forEach(element => {
-    let id = element.id;
-
-    let lnse = element.lenses;
-
-    let addButton = document.createElement("button");
-
-    let addImg = document.createElement("img");
-	addImg.src = "../backend/images/add.png";
-	addImg.setAttribute("alt", "Ajouter un produit")
-
-    let delButton = document.createElement("button");
-
-    let delImg = document.createElement("img");
-	delImg.src = "../backend/images/del.png";
-	delImg.setAttribute("alt", "Retirer un produit")
-
-    addButton.appendChild(addImg);
-    delButton.appendChild(delImg);
-
-    setItem(element, id, lnse, container, addButton, delButton);
-
-});
+if (panier) {
+    isPresent = true;
+    panier.forEach(element => {
+        let id = element.id;
+    
+        let lnse = element.lenses;
+    
+        let addButton = document.createElement("button");
+    
+        let addImg = document.createElement("img");
+        addImg.src = "../backend/images/add.png";
+        addImg.setAttribute("alt", "Ajouter un produit")
+    
+        let delButton = document.createElement("button");
+    
+        let delImg = document.createElement("img");
+        delImg.src = "../backend/images/del.png";
+        delImg.setAttribute("alt", "Retirer un produit")
+    
+        addButton.appendChild(addImg);
+        delButton.appendChild(delImg);
+    
+        setItem(element, id, lnse, container, addButton, delButton);
+    
+    });
+}
 
 container.appendChild(totalOrder);
 
 ////////////////////// Formulaire /////////////////////////
 
-let formContact = document.getElementById('form-contact'); 
+let formContact = document.getElementById('form-contact');
+if (!isPresent) {
+    formContact.classList = "display";
+} 
 formDisplay(panier);
 let firstName = document.getElementById('firstName');
 let lastName = document.getElementById('lastName');

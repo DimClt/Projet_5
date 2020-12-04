@@ -49,7 +49,7 @@ function setItem (element) {
     p.innerHTML = element.description;
   
     let price = document.createElement("p");
-    price.innerHTML = element.price/1000 + " €";
+    price.innerHTML = element.price/100 + " €";
     price.classList = "index-price";
   
     let article = document.createElement('article');
